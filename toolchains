@@ -1,0 +1,25 @@
+#!/usr/bin/sh
+
+export API=21
+export TOOLCHAIN=~/.android/android-ndk-r26b/toolchains
+export FOLDER_TARGET_ARCH=arm-linux-androideabi
+export COMPILER_TARGET_ARCH=armv7a-linux-androideabi
+export HOSTM=linux-x86_64
+export SYSROOT=${TOOLCHAIN}/llvm/prebuilt/${HOSTM}/sysroot
+export LIB_ARCH_TARGET=${SYSROOT}/usr/lib/${FOLDER_TARGET_ARCH}/${API}
+export SET_BINNARY=$TOOLCHAIN/llvm/prebuilt/${HOSTM}/bin
+export AR=${SET_BINNARY}/llvm-ar
+export CC=${SET_BINNARY}/${COMPILER_TARGET_ARCH}${API}-clang
+export AS=$CC
+export AR=${SET_BINNARY}/llvm-ar
+export CXX=${SET_BINNARY}/${COMPILER_TARGET_ARCH}${API}-clang++
+export LD=${SET_BINNARY}/ld
+export RANLIB=${SET_BINNARY}/llvm-ranlib
+export STRIP=${SET_BINNARY}/llvm-strip
+export READELF=${SET_BINNARY}/llvm-readelf
+export OBJDUMP=${SET_BINNARY}/llvm-objdump
+export PATH=$PATH:${SET_BINNARY}
+export OUTPUT=$(pwd)/OUT
+
+echo "Toolchain Env Ditambahkan"
+
